@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="xMTJ5N43Q-DJ6mNAV4wF-_rks8c5rHmStUxq1bSSNtw" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>this is the index page</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
+<!-- Bootstrap -->
+
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+<!-- Font Awesome  -->
+
+<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+<!-- Web Font  -->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+
+<link  type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/scroll.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
 {% block content %}
 <body>
 	<div class="container">

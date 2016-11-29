@@ -84,6 +84,16 @@
 <section id="main-content">
 		<div id="guts">
 <div id="test"class = "container " >
+{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+	    {% for message in messages %}
+		  <div class="alert alert-warning alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			{{message}}
+		  </div>
+		{% endfor %}
+	  {% endif %}
+	{% endwith %}
 {% block body %}
 <div id="section_header">
   <h2><span>Join </span> West Karate Club.</h2>
@@ -118,14 +128,14 @@
             <div class="caption">
               <h1>World Class Team.<span>.</span></h1>
              
-              <a href="../contact.html" class="btn">More Info</a> 
+            
 			</div>
           </li>
           <li> <img src="../static/images/karateindex3.jpg" alt="">
             <div class="caption">
               <h1>Professional Training<span>.</span></h1>
               <p>Classes every Friday and Saturday.</p>
-              <a href="../about.html" class="btn">More Info</a> 
+             
 			 </div>
           </li>
         </ul>

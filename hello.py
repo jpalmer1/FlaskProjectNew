@@ -53,14 +53,16 @@ for row in cur:
 
 cur.close()
 conn.close()
-@app.route("/logout/")
 
-@login_required
+
+
+
+@app.route("/logout/")
 def logout():
     session.clear()
     flash("You have been logged out!")
     gc.collect()
-    return redirect(url_for('index'))
+    return redirect(url_for('index.html'))
 
 @app.route('/login.html/', methods=["GET","POST"])
 def login_page():
@@ -79,7 +81,7 @@ def login_page():
                 session['username'] = request.form['username']
 
                 flash("You are now logged in")
-                return redirect(url_for("index"))
+                return render_template("index.html")
 
             else:
                 error = "Invalid credentials, try again."
@@ -91,7 +93,7 @@ def login_page():
     except Exception as e:
         flash(e)
         error = "Invalid credentials, try again."
-        return render_template("login.html", error = error)
+        return render_template("index.html", error = error)
 	
 		
 		
@@ -111,7 +113,7 @@ def register_page():
 
             if int(x) > 0:
                 flash("That username is already taken, please choose another")
-                return render_template('register.html', form=form)
+                return render_template('index.html', form=form)
 
             else:
                 c.execute("INSERT INTO user( username, password, email) VALUES ( %s,%s,%s)",
