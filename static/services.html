@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/favicon.ico"/>
+<title>West Karate| Classes</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+<!-- Font Awesome  -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!-- Web Font  -->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/scroll.js"></script>
+<script>
+// Accordian
+var action="click";
+var speed="500";
+
+$(document).ready(function(){
+	// Question handler
+	$('li.q').on(action ,function(){
+		// Get next element
+		$(this).next()
+			.slideToggle(speed)
+				// Select all other answers
+				.siblings('li.a')
+					.slideUp();
+		// Get image for active question
+		var img = $(this).children('img');
+		// Remove the 'rotate' class for all images except the active
+		$('img').not(img).removeClass('rotate');
+		// Toggle rotate class
+		img.toggleClass('rotate');
+	});
+});
+</script>
+</head>
+<style>
+.scrollToTop{
+	width:120px; 
+	height:130px;
+	padding:10px; 
+	text-align:center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	bottom:75px;
+	right:10px;
+	display:none;
+	background: url('arrow_up.png') no-repeat 0px 20px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+</style>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html"><img  style = "width:70px" src="images/west-karate-loge-vector.gif" alt=""/>West Karate</a> </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li class="active"><a href="services.html">Classes</a></li>
+		 <li><a href="#faq">FAQ</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+		
+      </ul>
+    </div>
+  </div>
+</nav>
+<a href="#" class="scrollToTop">To Top</a>
+<div id="section_header">
+  <div class="container">
+    <h2><span>Our</span> Classes</h2>
+  </div>
+</div>
+<div id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 service">
+        <h3>Classes </h3>
+	
+		<table class="table-responsive table-striped" >
+		<caption ><b> Beginner and Advanced classes, family discounts available </b></caption>
+			<tr>
+				<th>Activities</th>
+				<th>Days and Times</th>
+				<th>Cost</th>
+			</tr> 
+			<tr >
+			
+			<td>Beginners</td>
+			<td>Friday 6:30 pm-7:30 pm</td>
+			<td>€5.00 per class</td>
+			</tr>
+			<tr >
+			<td>Advanced</td>
+			<td>Fridays, 7:30 pm-9:00 pm</td>
+			<td>€5.00 per class</td>
+			</tr>
+			<tr >
+			<td>Beginners/Advanced</td>
+			<td>Saturday 11:30 am-1:00pm</td>
+			<td>€5.00 per class</td>
+			</tr>
+			
+</table>
+<br>
+        <p>West Karate have classes for all levels from the beginner to the most advanced students. We aim to make Karate afordable to all so the classes are only €5 per class but discounts are available for families.
+<br>		So what are you waiting for? give us a call today.		</p>
+        <img width= "70%"src="images/club1.png" class="img-responsive" alt=" "> </div>
+      <div class="col-lg-6 service">
+        <h3>Class Etiquette</h3>
+		<ul>
+			<li> Remove shoes and socks upon entering the dojo. Shoes are <b>NEVER</b>
+			worn on the training floor. </li>
+			
+			<li> Bow upon entering or leaving the dojo floor. This is to show respect
+			for the facilities used in the practice of karate. </li>
+
+			<lI> Students always line up for class in order of grade. For beginners,
+			this means that you will stay on the side closest to the door. </li>
+
+			<li> There should be no talking between students while class is in session.
+			Questions may be asked at an appropriate time. </li>
+
+			<li> Always follow the instructions given by the instructor. If you are
+			unfamiliar with the movements, try to copy the person next to you or a
+			senior. </li>
+
+			<li> Never refer to an instructor by name while in the dojo. Always use the
+			term "Sensei". </li>
+
+			<li> At <b>NO</b> time will horseplay be tolerated. Karate is a discipline
+			of both mind and body, and as such demands full concentration and serious
+			effort on the part of the student. Horseplay can only lead to loss of
+			knowledge and possible injury to oneself or one's partner. </li>
+
+			<li> Jewellery should not be worn while training. Watches, rings, earrings,
+			necklaces, etc. often get in the way and can cause otherwise avoidable
+			injuries. </li>
+
+			<li> Good hygiene should be followed. Fingers and toenails should be kept
+			short to prevent injury while training and hands and feet should be clean.
+			 </li>
+
+			<li> Keep the dojo clean. Clothing should be neatly placed along the wall
+			of the dojo. Make sure that any rubbish is properly disposed. </li>
+
+			<li> As a safety precaution, chewing gum is not allowed in class. </li>
+
+		</ul>
+</div>
+ 
+    <div class="row">
+	
+      <div class="col-lg-12 service">
+
+        <h3 id= "faq">Beginner's Guide</h3>
+		<ul class="faq">
+				<li class="q"><img src="images/arrow.png"> &nbsp; When can I join?</li>
+				<li class="a"><p>Beginners and other new members are welcome to join the club at any time during the year. All you have to do is turn up at a beginners training session and get started. We train all during the year. </p></li>
+				
+				<li class="q"><img src="images/arrow.png">&nbsp;  What do I wear to my first class?</li>
+				<li class="a"><p>It is wise to wear something loose e.g. track-suit bottoms and a T-shirt. Do not wear anything that has a zip or anything jagged which might injure yourself or someone else while training.</p></li>
+				
+				<li class="q"><img src="images/arrow.png"> &nbsp; Grading</li>
+				<li class="a"><p>To progress in karate you will be tested every 3 months or so. This test is called a grading and consists of an examination of your kihon (basic techniques), Kumite (sparring techniques and sequences), and a Kata (technique pattern). </p></li>
+				
+				<li class="q"><img src="images/arrow.png">&nbsp; What is Kata?</li>
+				<li class="a"><p>Kata are patterns of techniques that we perform , and as we do so we imagine defending against an imaginary opponent as we execute each movement. Kata is a method of practising applications for particular self defence scenarios.</p></li>
+				
+				<li class="q"><img src="images/arrow.png"> &nbsp; What is Kihon?</li>
+				<li class="a"><p>Kihon means the basics, perfecting the punch, the block, the kick, the stance, working on the body rotation and propulsion dynamic, using the major muscle groups, and so forth.</p></li>
+				
+				<li class="q"><img src="images/arrow.png">&nbsp;  What is Kumite?</li>
+				<li class="a"><p>Kumite means sparring, and the focus of kumite is to practice using the techniques we learn from kata. Kumite may take the form of fixed step sparring i.e. 5 steps forward and punch, 5 steps back and block, or free sparring.</p></li>
+				
+			</ul>
+        
+     
+     
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<div id="footerwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8"> <span class="copyright">Copyright &copy; 2015 West Karate Club. Design by <a href="http://jpdesignstech.blogspot.ie/" rel="nofollow">jpdesign</a></span> </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
+          <li><a href="https://www.facebook.com/westkarate.clubgalway?fref=ts"><i class="fa fa-facebook"></i></a> </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap core JavaScript --> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

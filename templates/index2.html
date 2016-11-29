@@ -1,0 +1,185 @@
+{% block body %}
+<style>
+
+/* New flipy thingy code */
+	
+#f1_container {
+	
+  position: relative;
+  margin: 10px auto;
+  width: 360px;
+  height: 280px;
+  z-index: 1;
+	
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+	
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+	border-color: black;
+	border: 2px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+	
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #C2D5E1;
+}
+
+</style>
+</head>
+<body>
+
+<div id="section_header">
+  <div class="container">
+    <h2> Our Instructors</h2>
+  </div>
+</div>
+<div id="about_section_1">
+  <div class="container">
+    <div id="Rebecca" class="row">
+       <div class="col-lg-4 service">
+	  <div id="f1_container">
+		<div id="f1_card" class="shadow">
+			<div class="front face">
+				<img width="360px" height="271px" src="../static/images/Instructors1.jpg" class="img-responsive" alt="Brendan "/>
+			</div>
+  				
+			<div class="back face center">
+				<h3>Chief Instructor Brendan O' Flaherty</h3>
+<p>Chief Instructor of West Karate Club is a Galway native. </p>
+					
+			</div>
+		</div>
+	</div>
+	
+        <h3>Chief Instructor Brendan O' Flaherty</h3>
+        <p dir="ltr">Chief Instructor of West Karate Club is a Galway native and started the club in 2009, and has created a very successful youth academy. </p>
+
+
+        </div>
+      <div class="col-lg-4 service">
+	   <div id="f1_container">
+		<div id="f1_card" class="shadow">
+			<div class="front face">
+				<img width="360px" height="271px" src="../static/images/Instructors2.jpg" class="img-responsive" alt="Rebecca "/>
+			</div>
+  				
+			<div class="back face center">
+				<h3 >3rd Dan Rebecca Palmer</h3>
+				<p>Galway native Rebecca is studying accountancy in NUI Galway. She has being studying Karate since the age of 5 years of age.
+				Rebecca has many All-Ireland titles and has also won medals in the World Championships held in Bulgaria in 2013 and Poznan in Poland in 2014. </p>
+				
+					
+			</div>
+		</div>
+	</div>
+	
+        <h3 >Rebecca Palmer</h3>
+        <p>Galway native Rebecca is studying accountancy in NUI Galway. She has being studying Karate since the age of 5 years of age.
+				Rebecca has many All-Ireland titles and has also won medals in the World Championships held in Bulgaria in 2013 and Poznan in Poland in 2014 .</p>
+		
+         </div>
+      <div class="col-lg-4 service">
+	   <div id="f1_container">
+		<div id="f1_card" class="shadow">
+			<div class="front face">
+				<img width="360px" height="271px" src="../static/images/Instructors3.jpg" class="img-responsive" alt="Jessica "/>
+			</div>
+  				
+			<div class="back face center">
+				<h3>2nd Dan Jessica Palmer</h3>
+<p>Galway native Jessica has being studying Karate for 13 years.  </p>
+					
+			</div>
+		</div>
+	</div>
+	
+        <h3>Jessica Palmer</h3>
+        <p>Galway native Jessica has being studying Karate for 13 years.Jessica has many All-Ireland titles and has also won medals in the World Championships held in Poznan in Poland in 2014.</p>
+		
+         </div>
+    </div>
+    <div id="Danielle" class="row">
+      <div class="col-lg-4 service">
+	   <div id="f1_container">
+		<div id="f1_card" class="shadow">
+			<div class="front face">
+				<img width="360px" height="271px" src="../static/images/Instructors4.jpg" class="img-responsive" alt="Danielle "/>
+			</div>
+  				
+			<div class="back face center">
+				<h3>2nd Dan Danielle McCluskey</h3>
+					<p>Galway native Danielle has being studying Karate for 13 years. </p>
+					
+			</div>
+		</div>
+	</div>
+	 
+        <h3>Danielle McCluskey </h3>
+        <p>Galway native Danielle has being studying Karate for 13 years.Danielle has many All-Ireland titles and was also selected for the Irish team for the World Championships held in Poznan in Poland in 2014.</p>
+		
+		 </div>
+      <div class="col-lg-4 service">
+	   <div id="f1_container">
+		<div id="f1_card" class="shadow">
+			<div class="front face">
+				<img width="360px" height="271px" src="../static/images/Instructors5.jpg" class="img-responsive" alt=" Craig"/>
+			</div>
+  				
+			<div class="back face center">
+				<h3>2nd Dan Craig Dempsey</h3>
+				<p>Galway native Craig  has being studying Karate for 10 years. </p>
+					
+			</div>
+		</div>
+	</div>
+	  
+        <h3>Craig Dempsey</h3>
+		<p>Galway native Craig  has being studying Karate for 10 years.
+Craig has many All-Ireland titles and has also won medals in the World Championships held in Bulgaria in 2013 and Poznan in Poland in 2014.</p>        
+         </div>
+      <div class="col-lg-4 service">
+	   <div id="f1_container">
+		<div id="f1_card" class="shadow">
+			<div class="front face">
+				<img  src="../static/images/Instructors6.jpg" class="img-responsive" alt="Johnathan"/>
+			</div>
+  				
+			<div class="back face center">
+				<h3>3rd Dan Johnathan Lardner</h3>
+<p>Johnathan lives in Carnmore and is studying Exercise,Fitness and Nutrition in Galway Community College.</p>
+					
+			</div>
+		</div>
+	</div>
+	 
+        <h3>Johnathan Lardner</h3>
+		<p>Johnathan lives in Carnmore and is studying Exercise,Fitness and Nutrition in Galway Community College.
+Johnathan has many All-Ireland titles and has also won medals in the World Championships held in Bulgaria in 2013 and Poznan in Poland in 2014. </p>
+		  
+         </div>
+	</div>
+</div>
+
+
+{% endblock %}

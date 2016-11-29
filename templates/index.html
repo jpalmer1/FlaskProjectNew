@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="xMTJ5N43Q-DJ6mNAV4wF-_rks8c5rHmStUxq1bSSNtw" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<title>this is the index page</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
+<!-- Bootstrap -->
+
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css'/>
+<!-- Font Awesome  -->
+
+<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+<!-- Web Font  -->
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+
+<link  type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/scroll.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--back button-->
+
+    
+<!--Adobe Edge Runtime-->
+
+	
+	
+	  
+	
+    
+<!--Adobe Edge Runtime End-->
+</head>
+
+
+<body >
+
+<div id="page-wrap">
+<nav class="navbar navbar-default">
+<div class = "container-fluid">
+
+			
+	
+	<ul class="nav navbar-nav navbar-right">
+		  
+		  <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+			<h5>
+
+		
+	
+			<a role="presentation" data-toggle="modal" data-target="#exampleModal" href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Login   </a>
+
+			
+
+		<a role="presentation" class="active" data-toggle="modal" data-target="#register" href="../register.html"><span class="glyphicon glyphicon-pencil"></span> Sign up</a><h5>
+		
+	  </div>
+      </ul>
+
+	</div> 
+
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="../index2.html"><img  style = "width:70px" src="../static/images/west-karate-loge-vector.gif" alt=""/>West Karate</a> </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="../main.html">Home</a></li>
+		<li ><a href="../index2.html">Instructors</a></li>
+        <li><a href="../about.html">About us</a></li>
+        <li><a href="../classes.html">Classes</a></li>
+		 <li><a href="../FAQ.html">FAQ</a></li>
+        <li><a id= "contact" href="../contact.html ">Contact us</a></li>
+      </ul>
+	 
+    </div>
+  </div>
+</nav>
+<section id="main-content">
+		<div id="guts">
+<div id="test"class = "container " >
+{% block body %}
+<div id="section_header">
+  <h2><span>Join </span> West Karate Club.</h2>
+</div>
+<!-- Slider -->
+<div class="header-banner"> 
+
+  <script src="../static/js/responsiveslides.min.js"></script> 
+  <script>
+			 $(function () {
+			  $("#slider").responsiveSlides({
+				auto: true,
+				nav: true,
+				speed: 500,
+				namespace: "callbacks",
+				pager: true,
+			  });
+			 });
+			 </script>
+  <div class="container">
+    <div class="slider">
+      <div class="callbacks_container">
+        <ul class="rslides" id="slider">
+          <li> <img src="../static/images/karateindex.jpg" alt="">
+            <div class="caption">
+              <h1>Youth Academy<span>.</span></h1>
+              <p>West Karate have a world class Youth Academy.</p>
+              <a href="../classes.html" class="btn">More Info</a>
+			 </div>
+          </li>
+          <li> <img src="../static/images/karateindex4.jpg" alt="">
+            <div class="caption">
+              <h1>World Class Team.<span>.</span></h1>
+             
+              <a href="../contact.html" class="btn">More Info</a> 
+			</div>
+          </li>
+          <li> <img src="../static/images/karateindex3.jpg" alt="">
+            <div class="caption">
+              <h1>Professional Training<span>.</span></h1>
+              <p>Classes every Friday and Saturday.</p>
+              <a href="../about.html" class="btn">More Info</a> 
+			 </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+{% endblock %}
+
+</div>
+
+
+</body>
+
+<!-- Footer -->
+<div id="footerwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8"> <span class="copyright">Copyright &copy; 2015 West Karate Club. Design by <a href="http://jpdesignstech.blogspot.ie/" rel="nofollow">jpdesign</a></span> </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
+          <li><a href="https://www.facebook.com/westkarate.clubgalway?fref=ts"><i class="fa fa-facebook"></i></a> </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap core JavaScript --> 
+</div>
+		</section>
+	</div>
+<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<script>
+
+<!-- jQuery code to load the pages and when the a achor tag is clicked loads in the content  -->
+
+	$(document).ready(function(){
+		$('a').click(function(e){
+			e.preventDefault();
+			$("#test").load($(this).attr('href'));
+		});
+	});
+	
+/* Back button code using the push and pop state */
+
+
+$("nav").delegate("a", "click", function() {
+        _link = $(this).attr("href");
+        history.pushState(null, null, _link);
+        loadContent(_link);
+        return false;
+    });
+var fnLoadPage = function(url) {
+    $('#test').fadeOut(function() {
+        $('.pageLoad').show();
+        $('#test').html('').load(url, function() {
+            $('.pageLoad').hide();
+            $('#test').fadeIn();
+        });
+     });
+};
+
+window.onpopstate = function(e) {
+     fnLoadPage.call(undefined, document.location.href);
+};
+
+</script>
+
+<!--<script src = "../static/js/loader.js"</script>-->
+</html>

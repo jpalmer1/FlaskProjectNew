@@ -1,0 +1,94 @@
+ <?php // sqltest.php
+  require_once '../login3.php';
+  $conn = new mysqli($hn, $un, $pw, $db);
+  if ($conn->connect_error) die($conn->connect_error);
+
+  if (isset($_POST['delete']) && isset($_POST['teacher_id']))
+	{
+		$teacher_id   = get_post($conn,'teacher_id');
+		$query  = "DELETE FROM teachers WHERE teacher_id='$teacher_id'";
+		$result = $conn->query($query);
+		if (!$result) echo "DELETE failed: $query<br>" .
+		  $conn->error . "<br><br>";
+	}
+
+  if (isset($_POST['teacher_id'])   &&
+      isset($_POST['first_name'])    &&
+      isset($_POST['last_name'])    &&
+	  isset($_POST['teacher_address']) &&
+	  isset($_POST['phone_number'])    &&
+	  isset($_POST['email_address'])  &&
+	  isset($_POST['other_teacher_details']))
+	{
+		$teacher_id   = get_post($conn, 'teacher_id');
+		$first_name    = get_post($conn, 'first_name');
+		$last_name = get_post($conn, 'last_name');
+		$teacher_address = get_post($conn, 'teacher_address');
+		$phone_number = get_post($conn, 'phone_number');
+		$email_address = get_post($conn, 'email_address');
+		$other_teacher_details = get_post($conn, 'other_teacher_details');
+		
+		$query    = "INSERT INTO teachers VALUES" .
+		  "('$teacher_id', '$first_name', '$last_name', '$teacher_address', '$phone_number', '$email_address', '$other_teacher_details')";
+		$result   = $conn->query($query);
+
+  	if (!$result) echo "INSERT failed: $query<br>" .
+      $conn->error . "<br><br>";
+	}
+echo <<<_END
+		<label><h1 id = "head" >Teachers Library </h1></label>
+_END;
+
+ echo <<<_END
+  <div id="data"><form action="teacher.php" method="post"><pre>
+					  Example:															
+	<B>Teacher Id:</B>    <input type="text" name="teacher_id"> Teacher Id: 108 
+	<B>First Name:</B>    <input type="text" name="first_name"> First Name: Mary
+	<B>Last Name:</B>     <input type="text" name="last_name"> Last Name: Jones
+	<B>Address:</B>       <input type="text" name="teacher_address"> Teacher Address: 13 castlelawn Hts
+	<B>Phone No:</B>      <input type="text" name="phone_number"> Phone Number: 091 123456
+	<B>Email:</B>         <input type="text" name="email_address"> Email: maryjones@gmail.com
+	<B>Details:</B>       <input type="text" name="other_teacher_details"> Details: Comments
+      
+          <div id="button"><input class="button" type="submit" value="ADD Teacher"></div>
+  </pre></form></div>
+_END;
+ $query1  = "SELECT * from teachers ";
+  $result1 = $conn->query($query1);
+  if (!$result1) die ("Database access failed: " . $conn->error);
+
+  $rows = $result1->num_rows;//will return a number
+  
+  for ($j = 0 ; $j < $rows ; ++$j)
+	{
+    $result1->data_seek($j);
+    $row = $result1->fetch_array(MYSQLI_NUM);
+
+echo <<<_END
+<div id="data">
+<pre>
+	<B>Teacher Id:</B>     $row[0] 
+	<B>First Name:</B>     $row[1]
+	<B>Last Name:</B>      $row[2]
+	<B>Teacher Address:</B>$row[3]
+	<B>Phone Number:</B>   $row[4]
+	<B>Email:</B>          $row[5]
+</pre>
+<form action="teacher.php" method="post">   
+<input type="hidden" name="delete" value="yes">
+<input type="hidden" name="teacher_id" value="$row[0]">
+	Teacher id:<input type="text" name="teacher_id">
+<input class="button1" type="submit" value="DELETE RECORD">
+</form>
+</div>
+    
+_END;
+	}
+  $result1->close();
+  $conn->close();
+  
+  function get_post($conn, $var)
+	{
+		return $conn->real_escape_string($_POST[$var]);
+	}
+?>

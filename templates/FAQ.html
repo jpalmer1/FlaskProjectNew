@@ -1,0 +1,67 @@
+
+
+{% block body %}
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/scroll.js"></script>
+<script>
+// Accordian
+var action="click";
+var speed="500";
+
+$(document).ready(function(){
+	// Question handler
+	$('li.q').on(action ,function(){
+		// Get next element
+		$(this).next()
+			.slideToggle(speed)
+				// Select all other answers
+				.siblings('li.a')
+					.slideUp();
+		// Get image for active question
+		var img = $(this).children('img');
+		// Remove the 'rotate' class for all images except the active
+		$('img').not(img).removeClass('rotate');
+		// Toggle rotate class
+		img.toggleClass('rotate');
+	});
+});
+</script>
+<div id="section_header">
+  <div class="container">
+    <h2><span>FAQ</span> </h2>
+  </div>
+</div>
+ <div class="row">
+	
+      <div class="col-lg-12 service">
+
+        <h3 id= "faq">Beginner's Guide</h3>
+		<ul class="faq">
+				<li class="q"><img src="../static/images/arrow.png"> &nbsp; When can I join?</li>
+				<li class="a"><p>Beginners and other new members are welcome to join the club at any time during the year. All you have to do is turn up at a beginners training session and get started. We train all during the year. </p></li>
+				
+				<li class="q"><img src="../static/images/arrow.png">&nbsp;  What do I wear to my first class?</li>
+				<li class="a"><p>It is wise to wear something loose e.g. track-suit bottoms and a T-shirt. Do not wear anything that has a zip or anything jagged which might injure yourself or someone else while training.</p></li>
+				
+				<li class="q"><img src="../static/images/arrow.png"> &nbsp; Grading</li>
+				<li class="a"><p>To progress in karate you will be tested every 3 months or so. This test is called a grading and consists of an examination of your kihon (basic techniques), Kumite (sparring techniques and sequences), and a Kata (technique pattern). </p></li>
+				
+				<li class="q"><img src="../static/images/arrow.png">&nbsp; What is Kata?</li>
+				<li class="a"><p>Kata are patterns of techniques that we perform , and as we do so we imagine defending against an imaginary opponent as we execute each movement. Kata is a method of practising applications for particular self defence scenarios.</p></li>
+				
+				<li class="q"><img src="../static/images/arrow.png"> &nbsp; What is Kihon?</li>
+				<li class="a"><p>Kihon means the basics, perfecting the punch, the block, the kick, the stance, working on the body rotation and propulsion dynamic, using the major muscle groups, and so forth.</p></li>
+				
+				<li class="q"><img src="../static/images/arrow.png">&nbsp;  What is Kumite?</li>
+				<li class="a"><p>Kumite means sparring, and the focus of kumite is to practice using the techniques we learn from kata. Kumite may take the form of fixed step sparring i.e. 5 steps forward and punch, 5 steps back and block, or free sparring.</p></li>
+				
+			</ul>
+        
+     
+     
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
